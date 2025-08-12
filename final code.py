@@ -1,8 +1,7 @@
 # ============================== #
 # ✅ Install Dependencies (only if not already installed)
 # ============================== #
-try:
-    import tiktoken
+
 
 
 # ============================== #
@@ -190,5 +189,6 @@ print(f"🔢 Total UPDRS Score: {updrs_score}")
 print(f"🧾 ML Prediction: {prediction}")
 print(f"🤖 LLM Recommendation: {llm_output}")
 print("==============================")
+
 
 
