@@ -18,8 +18,8 @@ import tiktoken
 # ============================== #
 # ✅ Load Models (ML & LLM)
 # ============================== #
-ml_model = joblib.load("/content/logistic_model.pkl")
-label_encoder = joblib.load("/content/label_encoder.pkl")
+ml_model = joblib.load("logistic_model.pkl")
+label_encoder = joblib.load("label_encoder.pkl")
 
 BASE_CONFIG = {
     "vocab_size": 50257,
@@ -35,7 +35,7 @@ settings, params = download_and_load_gpt2(model_size="124M", models_dir="gpt2")
 llm_model = GPTModel(BASE_CONFIG)
 load_weights_into_gpt(llm_model, params)
 
-fine_tuned_path = "/content/drive/MyDrive/FineTunedModels/Fine_tuned_updrs_model.pth"
+fine_tuned_path = "Fine_tuned_updrs_model.pth"
 checkpoint = torch.load(fine_tuned_path, map_location="cpu")
 llm_model.load_state_dict(checkpoint["Fine_tuned_model_state_dict"], strict=False)
 llm_model.eval()
@@ -191,3 +191,4 @@ print(f"🔢 Total UPDRS Score: {updrs_score}")
 print(f"🧾 ML Prediction: {prediction}")
 print(f"🤖 LLM Recommendation: {llm_output}")
 print("==============================")
+
