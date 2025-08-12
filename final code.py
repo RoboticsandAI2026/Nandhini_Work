@@ -3,8 +3,7 @@
 # ============================== #
 try:
     import tiktoken
-except ImportError:
-    !pip install tiktoken
+
 
 # ============================== #
 # ✅ Imports
@@ -191,4 +190,5 @@ print(f"🔢 Total UPDRS Score: {updrs_score}")
 print(f"🧾 ML Prediction: {prediction}")
 print(f"🤖 LLM Recommendation: {llm_output}")
 print("==============================")
+
 
