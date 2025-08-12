@@ -601,7 +601,8 @@ gpt.eval();
 def assign(left, right):
     if left.shape != right.shape:
         raise ValueError(f"Shape mismatch. Left: {left.shape}, Right: {right.shape}")
-    return torch.nn.Parameter(torch.tensor(right))
+    return torch.nn.Parameter(torch.tensor(right, dtype=torch.float32, device=left.device))
+
 
 
 import numpy as np
@@ -703,6 +704,7 @@ model.load_state_dict(checkpoint["model_state_dict"])
 optimizer = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=0.1)
 optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
 model.train();
+
 
 
 
