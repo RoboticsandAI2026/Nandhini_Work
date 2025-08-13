@@ -1,7 +1,4 @@
 # System libraries (for rendering / Streamlit)
-libgl1
-libglib2.0-0
-
 # ML frameworks
 torch==2.2.2
 tensorflow>=2.15.0
